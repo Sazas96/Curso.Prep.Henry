@@ -112,8 +112,21 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-}
 
+  if (numero%3===0 && numero%5===0) {
+  return "fizzbuzz";
+}
+  else if (numero%3===0) {
+  return "fizz";
+}
+  else if (numero%5===0) {
+  return "buzz";
+}
+  else{
+  return numero;
+  }
+  
+}
 function operadoresLogicos(num1, num2, num3) {
   //La función recibe tres números distintos. 
   //Si num1 es mayor a num2 y a num3 y además es positivo, retornar ---> "Número 1 es mayor y positivo"
@@ -121,6 +134,18 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+  if (num1===0 || num2===0 || num3===0) {
+    return "Error";
+  } else if (num1<0 || num2<0 || num3<0) {
+    return "Hay negativos"
+  } else if (num1>num2 && num1>num3 && num1>0) {
+    return "Número 1 es mayor y positivo"
+  } else if(num3>num1 && num3>num2){
+    return num3+1;
+  } else{
+    return false;
+  } 
+  
 }
 
 function esPrimo(numero) {
@@ -135,14 +160,20 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
+  if (valor===true) {
+    return "Soy verdadero";
+  } else{
+    return "Soy falso";
+  }
 }
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  
+  for(i=0;i<10;i++){
+    console.log(6*i + ", ");
+  }
 }
 
 function tieneTresDigitos(numero){
@@ -178,3 +209,4 @@ module.exports = {
   tieneTresDigitos,
   doWhile
 };
+
